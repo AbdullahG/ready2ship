@@ -1,0 +1,50 @@
+# Ready2Ship: app + MongoDB, plus optional automatic HTTPS (Caddy).
+#
+#   cp .env.example .env              # fill it in (see docs/self-host.md)
+#   docker compose up -d --build      # app on :8080, put your own proxy in front
+#   DOMAIN=r2s.example.com docker compose --profile tls up -d --build
+#                                      # or let Caddy get a Let's Encrypt cert on :443
+services:
+  app:
+    build: .
+    env_file: .env
+    environment:
+      MONGODB_URI: mongodb://mongo:27017
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    # The app drains running review jobs for up to 60s on SIGTERM.
+    stop_grace_period: 75s
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  caddy:
+    profiles: ["tls"]
+    image: caddy:2
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    command: caddy reverse-proxy --from ${DOMAIN:-localhost} --to app:8080
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy-data:/data
+    depends_on:
+      - app
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+  caddy-data:

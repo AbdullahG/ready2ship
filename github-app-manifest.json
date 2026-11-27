@@ -1,0 +1,24 @@
+{
+  "name": "Ready2Ship (your instance)",
+  "url": "https://YOUR_BASE_URL",
+  "description": "AI pull request review with your own Gemini key.",
+  "public": false,
+  "hook_attributes": { "url": "https://YOUR_BASE_URL/api/webhooks/github", "active": true },
+  "redirect_url": "http://localhost:3999/callback",
+  "callback_urls": ["https://YOUR_BASE_URL/api/auth/callback"],
+  "setup_url": "https://YOUR_BASE_URL/api/github/setup",
+  "setup_on_update": true,
+  "request_oauth_on_install": false,
+  "default_permissions": {
+    "contents": "write",
+    "issues": "write",
+    "metadata": "read",
+    "pull_requests": "write"
+  },
+  "default_events": [
+    "pull_request",
+    "issue_comment",
+    "pull_request_review_comment",
+    "pull_request_review_thread"
+  ]
+}

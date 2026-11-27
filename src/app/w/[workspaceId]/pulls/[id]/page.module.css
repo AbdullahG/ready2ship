@@ -1,0 +1,252 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  flex: 1;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.statusApproved { background: rgba(63, 185, 80, 0.15); color: var(--success); }
+.statusReviewed { background: rgba(210, 153, 34, 0.15); color: var(--warning); }
+.statusReviewing { background: rgba(88, 166, 255, 0.15); color: var(--accent); }
+.statusPending { background: rgba(110, 118, 129, 0.15); color: var(--text-muted); }
+.statusClosed { background: rgba(110, 118, 129, 0.15); color: var(--text-muted); }
+
+.meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.metaLabel {
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.githubLink {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.githubLink:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.summaryBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.findingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finding {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.findingHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.severityTag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tagBlocker {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--blocker);
+}
+
+.tagMinor {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--minor);
+}
+
+.tagImprovement {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--improvement);
+}
+
+.findingFile {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.findingLine {
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.findingResolved {
+  font-size: 11px;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.findingBody {
+  padding: 12px 14px;
+}
+
+.findingDesc {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.findingSuggestion {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.statsCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: sticky;
+  top: 24px;
+}
+
+.statsTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.statRow:last-child {
+  border-bottom: none;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.statNum {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.statBlocker { color: var(--blocker); }
+.statMinor { color: var(--minor); }
+.statImprovement { color: var(--improvement); }
+.statGreen { color: var(--success); }
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+/* Same breakpoint as the workspace layout: the side column goes under the findings. */
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
