@@ -1,4 +1,4 @@
-# 🚢 Ready2Ship
+# 🚢 Ready2Ship - Automated AI Code Review
 
 Open-source AI code review for GitHub pull requests. Install the GitHub App, add your own Gemini API key, and every PR gets a review: a summary, inline findings ranked **blocker / minor / improvement**, one-click fixes, and automatic approval once blockers are resolved.
 
